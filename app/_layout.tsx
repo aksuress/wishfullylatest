@@ -1,59 +1,71 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
+import { Stack } from "expo-router";
+import { useFonts } from "expo-font";
+import {
+  DMSans_400Regular,
+  DMSans_500Medium,
+  DMSans_500Medium_Italic,
+  DMSans_700Bold,
+} from "@expo-google-fonts/dm-sans";
+import {
+  Montserrat_900Black,
+  Montserrat_500Medium,
+  Montserrat_800ExtraBold,
+  Montserrat_700Bold,
+  Montserrat_400Regular,
+} from "@expo-google-fonts/montserrat";
+import * as SplashScreen from "expo-splash-screen";
+import React, { useEffect } from "react";
 
-import { useColorScheme } from '@/components/useColorScheme';
-
-export {
-  // Catch any errors thrown by the Layout component.
-  ErrorBoundary,
-} from 'expo-router';
-
-export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(tabs)',
-};
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-    ...FontAwesome.font,
+    DMSans_400Regular,
+    DMSans_500Medium,
+    DMSans_500Medium_Italic,
+    DMSans_700Bold,
+    Montserrat_900Black,
+    Montserrat_400Regular,
+    Montserrat_500Medium,
+    Montserrat_700Bold,
+    Montserrat_800ExtraBold,
   });
 
-  // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
-    if (error) throw error;
-  }, [error]);
-
-  useEffect(() => {
-    if (loaded) {
+    if (loaded || error) {
       SplashScreen.hideAsync();
     }
-  }, [loaded]);
+  }, [loaded, error]);
 
-  if (!loaded) {
+  if (!loaded && !error) {
     return null;
   }
 
-  return <RootLayoutNav />;
-}
-
-function RootLayoutNav() {
-  const colorScheme = useColorScheme();
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-      </Stack>
-    </ThemeProvider>
+    <Stack>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="Login" options={{ headerShown: false }} />
+      <Stack.Screen name="CreateAccount" options={{ headerShown: false }} />
+      <Stack.Screen name="FinishAccount1" options={{ headerShown: false }} />
+      <Stack.Screen name="FinishAccount2" options={{ headerShown: false }} />
+      <Stack.Screen name="Email" options={{ headerShown: false }} />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="CreateGroup" options={{ headerShown: false }} />
+      <Stack.Screen name="CreateGroup2" options={{ headerShown: false }} />
+      <Stack.Screen name="CreateGroup3" options={{ headerShown: false }} />
+      <Stack.Screen name="CreateEvent" options={{ headerShown: false }} />
+      <Stack.Screen name="CreateEvent2" options={{ headerShown: false }} />
+      <Stack.Screen name="CreateEvent3" options={{ headerShown: false }} />
+      <Stack.Screen name="CreateEvent4" options={{ headerShown: false }} />
+      <Stack.Screen name="CreateEvent5" options={{ headerShown: false }} />
+      <Stack.Screen name="CreateEvent6" options={{ headerShown: false }} />
+      <Stack.Screen name="Preference1" options={{ headerShown: false }} />
+      <Stack.Screen name="Preference2" options={{ headerShown: false }} />
+      <Stack.Screen name="Preference3" options={{ headerShown: false }} />
+      <Stack.Screen name="ReviewEvent" options={{ headerShown: false }} />
+      <Stack.Screen name="EventInvite" options={{ headerShown: false }} />
+      <Stack.Screen name="AddItem" options={{ headerShown: false }} />
+      <Stack.Screen name="Product" options={{ headerShown: false }} />
+    </Stack>
   );
 }
