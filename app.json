@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "wishful",
-    "slug": "wishful",
+    "name": "wishfully",
+    "slug": "wishfully",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -13,14 +13,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.app.wishfully"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/login.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.yohanpmdg.wishful"
+      "package": "com.app.wishfully"
     },
     "web": {
       "bundler": "metro",
@@ -35,7 +36,6 @@
           "iosUrlScheme": "com.googleusercontent.apps._some_id_here_"
         }
       ],
-
       "expo-font"
     ],
     "experiments": {
@@ -46,9 +46,12 @@
         "origin": false
       },
       "eas": {
-        "projectId": "69a12852-b4e5-42fb-8126-383291bd68d0"
+        "projectId": "dfaff474-d876-42fb-a99f-ab0aa6edf4c1"
       }
     },
-    "owner": "yohanpmdg"
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/dfaff474-d876-42fb-a99f-ab0aa6edf4c1"
+    }
   }
 }

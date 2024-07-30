@@ -1,4 +1,4 @@
-rootProject.name = 'wishful'
+rootProject.name = 'wishfully'
 
 dependencyResolutionManagement {
   versionCatalogs {

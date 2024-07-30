@@ -1,4 +1,4 @@
-package com.yohanpmdg.wishful
+package com.app.wishfully
 
 import android.app.Application
 import android.content.res.Configuration

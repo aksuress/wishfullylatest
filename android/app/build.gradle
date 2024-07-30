@@ -83,9 +83,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.yohanpmdg.wishful'
+    namespace 'com.app.wishfully'
     defaultConfig {
-        applicationId 'com.yohanpmdg.wishful'
+        applicationId 'com.app.wishfully'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
