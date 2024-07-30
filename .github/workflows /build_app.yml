@@ -3,7 +3,7 @@ name: "Build Android app"
 on:
   push:
     branches:
-      - devoops
+      - main
 jobs:
   build:
     runs-on: macos-latest
