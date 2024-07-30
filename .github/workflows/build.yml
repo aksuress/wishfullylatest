@@ -19,6 +19,12 @@ jobs:
       - name: Install npm dependencies
         run: |
           npm install
+      - name: Install Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: adopt
+          cache: gradle
       - name: Build Android Release
         run: |
           cd android && ./gradlew assembleRelease
